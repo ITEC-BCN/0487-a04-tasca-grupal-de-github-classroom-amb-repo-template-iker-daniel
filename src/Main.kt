@@ -7,9 +7,11 @@ fun main(){
     var partides: Int?
     var tiradesPerPartida: Int?
 
-    println(DAUS)
-    println("Benvingut/da al joc dels daus.\nPer guanyar cada partida, la suma dels punts de les teves tirades dels teus daus ha de ser superior a la de la CPU")
-    println(DAUS)
+    println("=======================================")
+    println("🎲 BENVINGUT/DA AL JOC DELS DAUS 🎲")
+    println("=======================================")
+    println("Per guanyar cada partida, la suma dels teus punts ha de ser superior a la de la CPU.")
+    println("Sort i que la fortuna et somrigui! 🍀\n")
 
     // Llegim el número de partides que volem jugar
     do {
@@ -57,9 +59,14 @@ fun main(){
             tiradesGuardades[partida][tiradesPerPartida] += tiradaActual
 
             /** Tirades CPU **/
-            acumuladorCPU += Random.nextInt(1, 6 + 1)
+            val tiradaCPU = Random.nextInt(1, 7)
+            acumuladorCPU += tiradaCPU
+            println("La CPU ha tret un ${CARES_DAU[tiradaCPU - 1]} !\n")
         }
 
+        println("\n=======================================")
+        println("📋 RESUM FINAL DE LA PARTIDA")
+        println("=======================================")
         println("Partida acabada!")
         println("Tu has aconseguit ${tiradesGuardades[partida][tiradesPerPartida]} punts")
         println("La CPU ha aconseguit $acumuladorCPU punts")
