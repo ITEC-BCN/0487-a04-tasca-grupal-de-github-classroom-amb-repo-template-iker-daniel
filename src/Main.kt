@@ -7,6 +7,8 @@ fun main(){
     var partides: Int?
     var tiradesPerPartida: Int?
 
+    var partidesGuanyades: Int = 0
+
     println("=======================================")
     println("🎲 BENVINGUT/DA AL JOC DELS DAUS 🎲")
     println("=======================================")
@@ -72,6 +74,7 @@ fun main(){
         println("La CPU ha aconseguit $acumuladorCPU punts")
 
         if (tiradesGuardades[partida][tiradesPerPartida] > acumuladorCPU){
+            partidesGuanyades ++
             println("Has guanyat!")
         }else if (tiradesGuardades[partida][tiradesPerPartida] < acumuladorCPU){
             println("Has perdut!")
@@ -79,4 +82,8 @@ fun main(){
             println("Heu empatat!")
         }
     }
+    val PERCENTATGE_GUANYAT = partidesGuanyades.toDouble() / partides.toDouble() * 100
+    println("\n${DAUS} FI DEL JOC ${DAUS}")
+    println("🏆 Has guanyat $partidesGuanyades de $partides partides.")
+    println("El teu percentatge de victòries és del **${"%.2f".format(PERCENTATGE_GUANYAT)}%**!")
 }
